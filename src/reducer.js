@@ -4,8 +4,9 @@
 
 //CONSTANTS
 const UPDATE_NAME = "UPDATE_NAME";
-const ADD_PERSON = "ADD_PERSON"
-const GET_PEOPLE = "GET_PEOPLE"
+const ADD_PERSON = "ADD_PERSON";
+const GET_PEOPLE = "GET_PEOPLE";
+
 
 //ACTION BUILDERS
 export function updateName(name) {
@@ -33,7 +34,7 @@ export function getPeople() {
         // })//
     }
 }
-
+//defining blueprint of all the data to keep track of
 let initialState = {
     people: [{
         name: "Sleepy",
@@ -42,6 +43,14 @@ let initialState = {
 }
 //REDUCER
 export default function (state = initialState, action) {
+    // ABOVE
+    // ES6 NOTATION
+    // state = initialState
+    // SAME AS...
+    // if(!state){
+    //     state = initialState
+    // }
+    // INITIAL STATE IS THE FALLBACK
     switch (action.type) {
         case UPDATE_NAME:
             return Object.assign({}, state, { name: action.name })

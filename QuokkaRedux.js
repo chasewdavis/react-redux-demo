@@ -37,6 +37,16 @@ let objects = [{
     age: 9
 }]
 
+let obj = {
+    // name:"Joe",
+    // age:7,
+    color:"blue",
+    cereal:"frosted cocoa flack puff crunch",
+    // age:8,
+    name:"Joseph",
+    age:9,
+}
+
 let allObjectsCombined = objects.reduce((currentMash, nextObject) => {
     currentMash;
     nextObject;
@@ -67,7 +77,7 @@ function reducer(state, action) {
     action;
     switch (action.type) {
         case "update_age":
-            return Object.assign({}, state, { age: action.age })
+            return Object.assign({}, state, { age: action.age },{},{},{},{})
     }
 }
 let state1 = reducer(allObjectsCombined, action)
@@ -81,7 +91,7 @@ state1;
 
 // We're going to send these actions from lots of places, 
 // so building that object, over and over again, could get redundant and is error prone to typos.
-// To help with this we wrap it in a function called an action builder
+// To help with this we wrap it in a function called an ACTION BUILDER
 
 
 function updateAge(age) {
@@ -103,6 +113,7 @@ function reducer2(state, action) {
             return Object.assign({}, state, { age: action.age })
     }
 }
+//ageAction returns an object to merge
 let ageAction = updateAge(12);
 let state2 = reducer2(allObjectsCombined, ageAction);
 state2;

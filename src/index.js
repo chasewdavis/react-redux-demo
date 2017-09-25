@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-
 //NEW IMPORTS HERE
 import store from './store'
 import { Provider } from 'react-redux' //Notice react-redux, not redux. 
